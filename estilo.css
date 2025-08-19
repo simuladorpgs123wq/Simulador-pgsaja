@@ -38,24 +38,46 @@ main {
 }
 
 /* ===== Header ===== */
+/* ===== Header alinhado ===== */
 .topo-empresa {
+  display: flex;
+  justify-content: center;     /* centraliza horizontalmente */
+  align-items: center;         /* centraliza verticalmente */
+  gap: 30px;                   /* espaço entre logo e linha */
   background-color: black;
-  padding: 16px 0;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
+  padding: 16px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  flex-wrap: wrap;             /* evita quebra feia no mobile */
 }
+
 .logo-empresa {
-  max-height: 120px;
+  max-height: 100px;           /* tamanho uniforme */
+  height: auto;
   width: auto;
   object-fit: contain;
 }
+
 .linha-divisoria {
   width: 2px;
   height: 60px;
   background: rgba(255,255,255,0.2);
-  margin: 0 auto;
+  border-radius: 2px;
 }
+
+/* Ajustes para telas menores */
+@media (max-width: 480px) {
+  .topo-empresa {
+    gap: 16px;
+  }
+  .logo-empresa {
+    max-height: 110px;
+  }
+  .linha-divisoria {
+    height: 40px;
+  }
+}
+
 
 /* ===== Textos ===== */
 h1 {
