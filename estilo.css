@@ -71,7 +71,7 @@ main {
     gap: 16px;
   }
   .logo-empresa {
-    max-height: 80px;
+    max-height: 130px;
   }
   .linha-divisoria {
     height: 40px;
@@ -117,33 +117,50 @@ input:focus, select:focus {
 /* ===== Botão animado ===== */
 #simularBtn {
   position: relative;
-  overflow: hidden;
+  background-color: #007bff;
   color: white;
-  font-size: 18px;
-  padding: 14px 28px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
-  background: linear-gradient(270deg, #e60000, #2c2c2c);
-  background-size: 200% 200%;
-  animation: deslizar 6s ease infinite;
-  box-shadow: 0 6px 20px rgba(230, 0, 0, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-#simularBtn:hover {
-  transform: scale(1.07);
-  box-shadow: 0 8px 25px rgba(230, 0, 0, 0.6);
-}
-#simularBtn:active {
-  transform: scale(0.95) translateY(2px);
-  box-shadow: 0 3px 10px rgba(230, 0, 0, 0.4);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
 }
 
-@keyframes deslizar {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+#simularBtn:hover {
+  transform: scale(1.03);
 }
+
+/* Reflexo */
+#simularBtn::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: rotate(25deg);
+  animation: brilho 2.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes brilho {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
+
 
 /* ===== Footer ===== */
 .footer-simulador {
