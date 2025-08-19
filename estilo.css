@@ -13,13 +13,26 @@ body {
 }
 
 /* ======= Centralização do simulador ======= */
+/* Padrão (desktop) */
 main {
   flex: 1;
   display: flex;
-  justify-content: center;   /* continua centralizado na horizontal */
-  align-items: flex-start;   /* cola no topo em vez de no meio */
+  justify-content: center;
+  align-items: center; /* centraliza na vertical no PC */
   padding: 20px;
 }
+
+/* Mobile (até 768px de largura) */
+@media (max-width: 768px) {
+  main {
+    align-items: flex-start; /* cola no topo */
+  }
+
+  .container-simulador {
+    margin-top: 20px; /* controla a distância do header */
+  }
+}
+
 
 /* ======= Container ======= */
 .container-simulador {
