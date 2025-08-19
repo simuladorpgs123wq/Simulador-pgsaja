@@ -14,11 +14,11 @@ body {
 
 /* ======= Centralização do simulador ======= */
 main {
-  flex: 1; /* ocupa o espaço livre */
+  flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center; /* centraliza na vertical */
-  padding: 20x;
+  justify-content: center;   /* continua centralizado na horizontal */
+  align-items: flex-start;   /* cola no topo em vez de no meio */
+  padding: 20px;
 }
 
 /* ======= Container ======= */
